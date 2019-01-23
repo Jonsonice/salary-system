@@ -63,12 +63,26 @@ export const constantRouterMap = [
   {
     path: '/form',
     component: Layout,
+    name: 'form',
+    meta: { title: '员工管理', icon: 'example' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
+        path: 'formlist',
+        name: 'FormList',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '员工列表', icon: 'form' }
+      },
+      {
+        path: 'addform',
+        name: 'AddForm',
+        component: () => import('@/views/form/addform/index'),
+        meta: { title: '新增员工', icon: 'form' }
+      },
+      {
+        path: 'showform',
+        name: 'ShowForm',
+        component: () => import('@/views/form/showform/index'),
+        meta: { title: '员工详情', icon: 'form' }
       }
     ]
   },
@@ -127,17 +141,6 @@ export const constantRouterMap = [
         path: 'menu2',
         component: () => import('@/views/nested/menu2/index'),
         meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
       }
     ]
   },
